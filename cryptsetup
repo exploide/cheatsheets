@@ -1,0 +1,7 @@
+# Setup encrypted block device
+# - overwrite the device first
+# - create partition table and partition
+cryptsetup luksFormat --type luks2 --key-size 512 /dev/foo1
+cryptsetup open /dev/foo1 newcrypt
+mkfs.xfs -L SomeLabel /dev/mapper/newcrypt
+cryptsetup close newcrypt
