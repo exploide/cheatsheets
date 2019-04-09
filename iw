@@ -1,0 +1,3 @@
+# Wifi device short info (MAC, SSID, mode, channel)
+iw dev
+iw dev wlp3s0 info
