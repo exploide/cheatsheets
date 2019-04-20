@@ -1,3 +1,3 @@
 # Overwrite block device with random data produced by openssl
-set -x PASS (tr -cd '[:alnum:]' < /dev/urandom | head -c128)
+set -x PASS (openssl rand -hex 32)
 openssl enc -aes-128-ctr -pass env:PASS -pbkdf2 -nosalt < /dev/zero | dd status=progress bs=8M of=/dev/foo
