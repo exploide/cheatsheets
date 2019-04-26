@@ -1,0 +1,2 @@
+# Delete everything (all indices) from elasticsearch
+curl -X DELETE 'http://localhost:9200/_all'
