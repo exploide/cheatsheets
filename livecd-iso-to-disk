@@ -1,0 +1,5 @@
+# Setup USB live system on separate partition with overlay FS
+# - write GPT to USB drive
+# - create target partition (FAT32, esp and boot flags, named 'EFI System Partition', e.g. 4 GiB)
+# - arbitrarily create further data partition(s)
+livecd-iso-to-disk --efi --overlay-size-mb 2000 ./Fedora-Security-Live.iso /dev/foo1
