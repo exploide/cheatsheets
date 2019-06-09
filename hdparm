@@ -1,0 +1,8 @@
+# Display drive info
+hdparm -I /dev/foo
+
+# Securely erase drive
+# important for SSD, don't do over USB, maybe overwrite drive afterwards manually
+# - make sure drive security is not frozen, suspending might help (systemctl suspend)
+hdparm --user-master u --security-set-pass S0mePassw0rdF0rDrive /dev/foo
+hdparm --user-master u --security-erase S0mePassw0rdF0rDrive /dev/foo
