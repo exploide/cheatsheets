@@ -1,10 +1,10 @@
 # Wifi device short info (MAC, SSID, mode, channel)
 iw dev
-iw dev wlp3s0 info
+iw dev wlp0s20f3 info
 
 # Set device into managed or monitor mode
-iw dev wlp3s0 set type managed
-iw dev wlp3s0 set type monitor
+iw dev wlp0s20f3 set type managed
+iw dev wlp0s20f3 set type monitor
 
 # Switch channel
-iw dev wlp3s0 set channel 36
+iw dev wlp0s20f3 set channel 36
