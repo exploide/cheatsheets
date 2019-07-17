@@ -1,0 +1,9 @@
+# Create bridge, connect interface
+ip l add mybr0 type bridge
+ip l set mybr0 up
+ip l set enp0s31f6 up
+ip l set enp0s31f6 master mybr0
+
+# Remove interface from bridge, delete bridge
+ip l set enp0s31f6 nomaster
+ip l delete mybr0
