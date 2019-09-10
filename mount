@@ -1,0 +1,2 @@
+# Mount SMB share
+mount.cifs -o user=NAME,dom=DOMAIN //10.0.0.5/SHARE /mnt
