@@ -1,4 +1,6 @@
-```mysql
+---
+syntax: mysql
+---
 # Create DB and new user with all permissions for this database
 create database mydatabase;
 grant all privileges on mydatabase.* to 'myuser'@'localhost' identified by 'mypassword';
@@ -6,4 +8,3 @@ grant all privileges on mydatabase.* to 'myuser'@'localhost' identified by 'mypa
 # Delete DB and user along their permissions
 drop user 'myuser'@'localhost';
 drop database mydatabase;
-```
