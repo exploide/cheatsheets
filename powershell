@@ -1,0 +1,5 @@
+---
+syntax: powershell
+---
+# Recursively search for files in path
+Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Name -Path C:\ *.txt
