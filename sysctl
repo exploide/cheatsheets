@@ -1,0 +1,5 @@
+# Allow more inotify watchers
+fs.inotify.max_user_watches=200000
+
+# Allow non-root users to bind to low ports
+net.ipv4.ip_unprivileged_port_start=0
