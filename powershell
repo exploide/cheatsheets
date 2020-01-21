@@ -3,3 +3,8 @@ syntax: powershell
 ---
 # Recursively search for files in path
 Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Name -Path C:\ *.txt
+
+# Recursively search for pattern in files
+# Print only files with matches
+Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Select-String -Pattern foo
+Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Select-String -Pattern foo | Select-Object -Unique Path
