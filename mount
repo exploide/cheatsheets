@@ -1,2 +1,5 @@
+# Mount NFS share
+mount.nfs 192.0.2.1:SHARE /mnt
+
 # Mount SMB share
 mount.cifs -o user=NAME,dom=DOMAIN //192.0.2.1/SHARE /mnt
