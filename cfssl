@@ -1,0 +1,8 @@
+# Generate example CSR in JSON format
+cfssl print-defaults csr
+
+# Generate self-signed root CA
+cfssl gencert -initca ca.json | cfssljson -bare ca
+
+# Generate key and signed certificate for subject
+cfssl gencert -ca ca.pem -ca-key ca-key.pem foo.json | cfssljson -bare foo
