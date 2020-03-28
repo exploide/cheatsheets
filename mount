@@ -1,4 +1,4 @@
-# Mount NFS share
+# Mount NFS share (find SHARE via 'showmount -e HOST')
 mount.nfs 192.0.2.1:SHARE /mnt
 
 # Mount SMB share
