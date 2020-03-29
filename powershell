@@ -8,3 +8,6 @@ Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Name -Path C:\ *.tx
 # Print only files with matches
 Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Select-String -Pattern foo
 Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Select-String -Pattern foo | Select-Object -Unique Path
+
+# Download file via HTTP
+(New-Object System.Net.WebClient).DownloadFile("http://example.org/file.txt", "C:\Windows\TEMP\file.txt")
