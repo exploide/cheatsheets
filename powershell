@@ -11,3 +11,10 @@ Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Se
 
 # Download file via HTTP
 (New-Object System.Net.WebClient).DownloadFile("http://example.org/file.txt", "C:\Windows\TEMP\file.txt")
+
+# Start process as another user
+$username = 'user'
+$password = 'password'
+$securePassword = ConvertTo-SecureString $password -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential $username, $securePassword
+Start-Process prog.exe -Credential $credential
