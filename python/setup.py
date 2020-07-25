@@ -5,7 +5,7 @@ import setuptools
 
 setuptools.setup(
     name='pysomething',
-    version='0.1.0-dev',
+    version='0.1.0.dev0',
     author='Jane Doe',
     author_email='mail@example.org',
     url='https://example.org/pysomething',
