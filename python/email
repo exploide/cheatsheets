@@ -6,13 +6,13 @@ from email.utils import formatdate
 import smtplib
 
 msg = EmailMessage()
-msg["Subject"] = "Sample Mail"
+msg["Date"] = formatdate(localtime=True)
 msg["From"] = "sender@example.org"
 msg["To"] = "recipient@example.org"
-msg["Date"] = formatdate(localtime=True)
+msg["Subject"] = "Sample Mail"
 msg.set_content("Greetings from Python")
 
-s = smtplib.SMTP("mail.example.org", port=25)
-s.starttls()
-s.send_message(msg)
-s.quit()
+smtp = smtplib.SMTP("mail.example.org", port=25)
+smtp.starttls()
+smtp.send_message(msg)
+smtp.quit()
