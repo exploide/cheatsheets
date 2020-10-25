@@ -1,0 +1,35 @@
+---
+syntax: java
+---
+// Execute a command on a shell using ProcessBuilder
+ 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+static void execute(String cmd) {
+    try {
+        String shell;
+        String shellOpt;
+        String osName = System.getProperty("os.name").toLowerCase();
+        if(osName.contains("windows")) {
+            shell = "cmd.exe";
+            shellOpt = "/c";
+        } else {
+            shell = "/bin/sh";
+            shellOpt = "-c";
+        }
+        ProcessBuilder pb = new ProcessBuilder(shell, shellOpt, cmd);
+        pb.redirectErrorStream(true);
+        Process p = pb.start();
+        BufferedReader stdoutReader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        StringBuilder stdout = new StringBuilder("");
+        String s;
+        while((s = stdoutReader.readLine()) != null) {
+            stdout.append(s).append(System.getProperty("line.separator"));
+        }
+        Integer exitCode = p.waitFor();
+        System.out.println(stdout);
+    } catch(Exception e) {
+        e.printStackTrace();
+    }
+}
