@@ -3,5 +3,5 @@
 # - create partition table and partition
 cryptsetup luksFormat --type luks2 --key-size 512 /dev/foo1
 cryptsetup open /dev/foo1 newcrypt
-mkfs.xfs -L SomeLabel /dev/mapper/newcrypt
+mkfs.btrfs --csum xxhash -L Label /dev/mapper/newcrypt
 cryptsetup close newcrypt
