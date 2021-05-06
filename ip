@@ -7,3 +7,8 @@ ip l set enp0s31f6 master mybr0
 # Remove interface from bridge, delete bridge
 ip l set enp0s31f6 nomaster
 ip l delete mybr0
+
+# Create and use network namespace
+ip netns add mynetns
+ip l set dev enp0s31f6 netns mynetns
+ip netns exec mynetns fish
