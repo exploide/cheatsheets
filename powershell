@@ -5,8 +5,8 @@ syntax: powershell
 Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Name -Path C:\ *.txt
 
 # Recursively search for pattern in files
-# Print only files with matches
 Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Select-String -ErrorAction SilentlyContinue -Pattern foo
+# Print only files with matches
 Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Select-String -ErrorAction SilentlyContinue -Pattern foo | Select-Object -Unique Path
 
 # Download file via HTTP
@@ -14,6 +14,9 @@ Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Se
 
 # Get current user name
 [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+
+# Get PS language mode
+$ExecutionContext.SessionState.LanguageMode
 
 # Start process as another user
 $username = 'user'
