@@ -1,2 +1,5 @@
 # Generate self-signed certificate for new private key
 openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365 -subj '/CN=localhost'
+
+# Create PKCS12/PFX bundle from certificate and key
+openssl pkcs12 -export -in cert.pem -inkey key.pem -certfile chain.pem -out bundle.p12
