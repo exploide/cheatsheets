@@ -3,3 +3,9 @@ openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 36
 
 # Create PKCS12/PFX bundle from certificate and key
 openssl pkcs12 -export -in cert.pem -inkey key.pem -certfile chain.pem -out bundle.p12
+
+# Get certificate chain from server in PEM format
+openssl s_client -showcerts -connect example.org:443 < /dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p'
+
+# Show details of all certificates in chain
+openssl crl2pkcs7 -nocrl -certfile chain.pem | openssl pkcs7 -print_certs -noout -text
