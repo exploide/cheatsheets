@@ -1,0 +1,2 @@
+# Fetch pull request branch from GitHub or similar platforms
+git fetch origin pull/ID/head:BRANCH
