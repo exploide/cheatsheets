@@ -1,0 +1,11 @@
+# Write string to response
+<% Response.Write("HelloWorld") %>
+
+# Execute system command and write stdout/stderr to response
+<%
+Dim shell, proc
+Set shell = CreateObject("WScript.Shell")
+Set proc = shell.exec("cmd.exe /c dir")
+Response.Write(proc.StdOut.ReadAll)
+Response.Write(proc.StdErr.ReadAll)
+%>
