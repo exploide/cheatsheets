@@ -1,0 +1,23 @@
+# Common services on TCP ports
+   21 FTP
+   22 SSH
+   23 Telnet
+   80 HTTP
+  135 MS DCE/RPC
+  139 NetBIOS, SMB
+  389 LDAP
+  443 HTTPS
+  445 SMB
+  636 LDAPS
+ 1433 MSSQL
+ 3306 MySQL
+ 3389 RDP
+ 5432 PostgreSQL
+ 5900 VNC
+ 8080 HTTP (common alternative)
+ 8443 HTTPS (common alternative)
+
+# Common services on UDP ports
+  161 SNMP
+  623 IPMI
+ 1434 MSSQL
