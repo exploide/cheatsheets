@@ -2,13 +2,20 @@
    21 FTP
    22 SSH
    23 Telnet
+   25 SMTP
    80 HTTP
+  110 POP3
   135 MS DCE/RPC
   139 NetBIOS, SMB
+  143 IMAP
   389 LDAP
   443 HTTPS
   445 SMB
+  465 SMTPS (submission)
+  587 SMTP (submission)
   636 LDAPS
+  993 IMAPS
+  995 POP3S
  1433 MSSQL
  3306 MySQL
  3389 RDP
