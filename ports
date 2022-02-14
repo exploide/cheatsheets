@@ -23,6 +23,7 @@
  5900 VNC
  8080 HTTP (common alternative)
  8443 HTTPS (common alternative)
+24007 GlusterFS
 
 # Common services on UDP ports
   161 SNMP

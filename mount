@@ -3,3 +3,6 @@ mount.nfs 192.0.2.1:/SHARE /mnt
 
 # Mount SMB share
 mount.cifs -o user=NAME,dom=DOMAIN //192.0.2.1/SHARE /mnt
+
+# Mount GlusterFS volume (find VOLUME via 'gluster --remote-host=HOST volume info')
+mount.glusterfs 192.0.2.1:/VOLUME /mnt
