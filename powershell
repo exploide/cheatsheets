@@ -12,6 +12,9 @@ Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Se
 # Download file via HTTP
 (New-Object System.Net.WebClient).DownloadFile("http://example.org/file.txt", "C:\Windows\TEMP\file.txt")
 
+# Get services listening on TCP ports
+Get-NetTCPConnection -State Listen | Select-Object -Property LocalAddress,LocalPort,OwningProcess,@{'Name'='ProcessName';Expression={(Get-Process -Id $_.OwningProcess).ProcessName}}
+
 # Get current user name
 [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 
