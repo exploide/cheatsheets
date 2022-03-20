@@ -22,6 +22,7 @@
  5432 PostgreSQL
  5900 VNC
  8080 HTTP (common alternative)
+ 8086 InfluxDB
  8443 HTTPS (common alternative)
 10250 Kubernetes Kubelet API
 24007 GlusterFS
