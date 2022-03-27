@@ -1,0 +1,5 @@
+---
+syntax: powershell
+---
+# Download file via HTTP
+(New-Object System.Net.WebClient).DownloadFile("http://example.org/file.txt", "C:\Windows\TEMP\file.txt")

@@ -1,0 +1,12 @@
+---
+syntax: powershell
+---
+# Get PS language mode
+$ExecutionContext.SessionState.LanguageMode
+
+# Start process as another user
+$username = 'user'
+$password = 'password'
+$securePassword = ConvertTo-SecureString $password -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential $username, $securePassword
+Start-Process -Credential $credential -WindowStyle Hidden prog.exe -ArgumentList "arg1 arg2"
