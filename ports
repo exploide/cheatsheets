@@ -1,33 +1,34 @@
-# Common services on TCP ports
-   21 FTP
-   22 SSH
-   23 Telnet
-   25 SMTP
-   80 HTTP
-  110 POP3
-  135 MS DCE/RPC
-  139 NetBIOS, SMB
-  143 IMAP
-  389 LDAP
-  443 HTTPS
-  445 SMB
-  465 SMTPS (submission)
-  587 SMTP (submission)
-  636 LDAPS
-  993 IMAPS
-  995 POP3S
- 1433 MSSQL
- 3306 MySQL
- 3389 RDP
- 5432 PostgreSQL
- 5900 VNC
- 8080 HTTP (common alternative)
- 8086 InfluxDB
- 8443 HTTPS (common alternative)
-10250 Kubernetes Kubelet API
-24007 GlusterFS
-
-# Common services on UDP ports
-  161 SNMP
-  623 IPMI
- 1434 MSSQL
+---
+syntax: plaintext
+---
+# Common services on ports
+   21/tcp FTP
+   22/tcp SSH
+   23/tcp Telnet
+   25/tcp SMTP
+   80/tcp HTTP
+  110/tcp POP3
+  135/tcp MS DCE/RPC
+  139/tcp NetBIOS, SMB
+  143/tcp IMAP
+  161/udp SNMP
+  389/tcp LDAP
+  443/tcp HTTPS
+  445/tcp SMB
+  465/tcp SMTPS (client submission)
+  587/tcp SMTP (client submission)
+  623/udp IPMI
+  636/tcp LDAPS
+  993/tcp IMAPS
+  995/tcp POP3S
+ 1433/tcp MSSQL
+ 1434/udp MSSQL
+ 3306/tcp MySQL
+ 3389/tcp RDP
+ 5432/tcp PostgreSQL
+ 5900/tcp VNC
+ 8080/tcp HTTP (common alternative)
+ 8086/tcp InfluxDB
+ 8443/tcp HTTPS (common alternative)
+10250/tcp Kubernetes Kubelet API
+24007/tcp GlusterFS
