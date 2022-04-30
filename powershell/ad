@@ -1,2 +1,5 @@
+---
+syntax: powershell
+---
 # Get max number of Domain Cached Credentials
 reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v CachedLogonsCount
