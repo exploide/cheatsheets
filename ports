@@ -29,6 +29,7 @@ syntax: plaintext
  5900/tcp VNC
  5985/tcp WinRM
  5986/tcp WinRM (TLS)
+ 6379/tcp Redis
  8080/tcp HTTP (common alternative)
  8086/tcp InfluxDB
  8443/tcp HTTPS (common alternative)
