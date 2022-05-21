@@ -1,0 +1,2 @@
+# Write text to image file
+convert -background white -fill black -pointsize 40 -font Source-Code-Pro label:'Sample Text' text.png
