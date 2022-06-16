@@ -1,0 +1,5 @@
+---
+syntax: sql
+---
+-- Write into file when stacked queries are permitted
+...; attach database '/some/file' as mydb; create table mydb.foo (dataz text); insert into mydb.foo (dataz) values ("some content");--
