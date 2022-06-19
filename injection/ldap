@@ -1,0 +1,3 @@
+# LDAP search filter injection
+# the following special characters might trigger unexpected behavior
+* ( ) \
