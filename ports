@@ -16,6 +16,7 @@ syntax: plaintext
   443/tcp HTTPS
   445/tcp SMB
   465/tcp SMTPS (client submission)
+  500/udp ISAKMP/IKE
   587/tcp SMTP (client submission)
   623/udp IPMI
   636/tcp LDAPS
