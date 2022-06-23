@@ -6,6 +6,7 @@ syntax: plaintext
    22/tcp SSH
    23/tcp Telnet
    25/tcp SMTP
+   53/udp DNS
    80/tcp HTTP
   110/tcp POP3
   135/tcp MS DCE/RPC
