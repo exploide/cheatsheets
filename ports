@@ -6,6 +6,7 @@ syntax: plaintext
    22/tcp SSH
    23/tcp Telnet
    25/tcp SMTP
+   53/tcp DNS
    53/udp DNS
    80/tcp HTTP
   110/tcp POP3
@@ -21,6 +22,7 @@ syntax: plaintext
   587/tcp SMTP (client submission)
   623/udp IPMI
   636/tcp LDAPS
+  853/tcp DNS over TLS
   993/tcp IMAPS
   995/tcp POP3S
  1433/tcp MSSQL
