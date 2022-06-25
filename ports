@@ -9,6 +9,7 @@ syntax: plaintext
    53/tcp DNS
    53/udp DNS
    80/tcp HTTP
+  123/udp NTP
   110/tcp POP3
   135/tcp MS DCE/RPC
   139/tcp NetBIOS, SMB
@@ -29,6 +30,7 @@ syntax: plaintext
  1434/udp MSSQL
  3306/tcp MySQL
  3389/tcp RDP
+ 4460/tcp NTS-KE (NTP)
  5432/tcp PostgreSQL
  5900/tcp VNC
  5985/tcp WinRM
