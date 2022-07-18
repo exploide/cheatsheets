@@ -4,9 +4,12 @@ syntax: powershell
 # Get PS language mode
 $ExecutionContext.SessionState.LanguageMode
 
+# Create credential object for running commands as another user
+$passwd = ConvertTo-SecureString "password123" -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential "user123", $passwd
+
 # Start process as another user
-$username = 'user'
-$password = 'password'
-$securePassword = ConvertTo-SecureString $password -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential $username, $securePassword
-Start-Process -Credential $credential -WindowStyle Hidden prog.exe -ArgumentList "arg1 arg2"
+Start-Process -Credential $cred -WindowStyle Hidden prog.exe -ArgumentList "arg1 arg2"
+
+# Invoke command as another user on another computer
+Invoke-Command -Credential $cred -ComputerName SRV123 -ScriptBlock {whoami}
