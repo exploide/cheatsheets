@@ -30,6 +30,7 @@ syntax: plaintext
  1434/udp MSSQL
  3306/tcp MySQL
  3389/tcp RDP
+ 3400/tcp Sophos RED (TLS)
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
  5432/tcp PostgreSQL
