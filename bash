@@ -1,3 +1,6 @@
+# Parameter substitution
+${var:-default} # use default value if $var is unset or empty
+
 # Loops
 while true; do date; sleep 1; done
 for i in *.txt; do echo "$i"; done
