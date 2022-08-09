@@ -8,6 +8,15 @@ ip l set enp0s31f6 master mybr0
 ip l set enp0s31f6 nomaster
 ip l delete mybr0
 
+# Enable VLAN tagging on interface
+ip l add link enp0s31f6 name enp0s31f6.100 type vlan id 100
+ip l set dev enp0s31f6.100 up
+dhcpcd enp0s31f6.100   # or add IP manually before setting device up
+
+# Remove VLAN-enabled interface
+ip l set dev enp0s31f6.100 down
+ip l delete enp0s31f6.100
+
 # Create and use network namespace
 ip netns add mynetns
 ip l set dev enp0s31f6 netns mynetns
