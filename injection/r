@@ -1,0 +1,5 @@
+---
+syntax: r
+---
+# Execute system command
+system("whoami", intern = TRUE)
