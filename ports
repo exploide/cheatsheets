@@ -43,3 +43,4 @@ syntax: plaintext
  8443/tcp HTTPS (common alternative)
 10250/tcp Kubernetes Kubelet API
 24007/tcp GlusterFS
+27017/tcp MongoDB
