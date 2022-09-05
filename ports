@@ -24,6 +24,7 @@ syntax: plaintext
   500/udp ISAKMP/IKE
   587/tcp SMTP (client submission)
   623/udp IPMI
+  631/tcp CUPS
   636/tcp LDAPS
   853/tcp DNS over TLS
   993/tcp IMAPS
