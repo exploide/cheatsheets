@@ -9,6 +9,8 @@ syntax: plaintext
    53/tcp DNS
    53/udp DNS
    80/tcp HTTP
+   88/tcp Kerberos
+   88/udp Kerberos
   123/udp NTP
   110/tcp POP3
   135/tcp MS DCE/RPC
@@ -33,6 +35,8 @@ syntax: plaintext
  3400/tcp Sophos RED (TLS)
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
+ 5355/tcp LLMNR
+ 5355/udp LLMNR
  5432/tcp PostgreSQL
  5900/tcp VNC
  5985/tcp WinRM
