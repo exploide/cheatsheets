@@ -46,6 +46,8 @@ syntax: plaintext
  8080/tcp HTTP (common alternative)
  8086/tcp InfluxDB
  8443/tcp HTTPS (common alternative)
+ 8530/tcp WSUS
+ 8531/tcp WSUS Metadata
 10250/tcp Kubernetes Kubelet API
 24007/tcp GlusterFS
 27017/tcp MongoDB
