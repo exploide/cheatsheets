@@ -13,8 +13,8 @@ syntax: plaintext
    88/udp Kerberos
   123/udp NTP
   110/tcp POP3
-  135/tcp MS DCE/RPC
-  139/tcp NetBIOS, SMB
+  135/tcp MS-DCE/RPC
+  139/tcp NetBIOS/SMB
   143/tcp IMAP
   161/udp SNMP
   389/tcp LDAP
