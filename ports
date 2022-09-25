@@ -9,6 +9,7 @@ syntax: plaintext
    53/tcp DNS
    53/udp DNS
    67/udp DHCPv4 server
+   68/udp DHCPv4 client
    80/tcp HTTP
    88/tcp Kerberos
    88/udp Kerberos
