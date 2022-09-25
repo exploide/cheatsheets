@@ -8,6 +8,7 @@ syntax: plaintext
    25/tcp SMTP
    53/tcp DNS
    53/udp DNS
+   67/udp DHCPv4 server
    80/tcp HTTP
    88/tcp Kerberos
    88/udp Kerberos
@@ -17,11 +18,14 @@ syntax: plaintext
   139/tcp NetBIOS/SMB
   143/tcp IMAP
   161/udp SNMP
+  323/udp chronyd
   389/tcp LDAP
   443/tcp HTTPS
   445/tcp SMB
   465/tcp SMTPS (client submission)
   500/udp ISAKMP/IKE
+  546/udp DHCPv6 client
+  547/udp DHCPv6 server
   587/tcp SMTP (client submission)
   623/udp IPMI
   631/tcp CUPS
@@ -36,6 +40,7 @@ syntax: plaintext
  3400/tcp Sophos RED (TLS)
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
+ 5353/udp mDNS
  5355/tcp LLMNR
  5355/udp LLMNR
  5432/tcp PostgreSQL
