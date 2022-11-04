@@ -7,4 +7,4 @@ iw dev wlp2s0 set type managed
 iw dev wlp2s0 set type monitor
 
 # Switch channel
-iw dev wlp2s0 set channel 36
+iw dev wlp2s0 set channel <num> [width]
