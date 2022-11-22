@@ -13,6 +13,8 @@ syntax: plaintext
    80/tcp HTTP
    88/tcp Kerberos
    88/udp Kerberos
+  111/tcp rpcbind
+  111/udp rpcbind
   123/udp NTP
   110/tcp POP3
   135/tcp MS-DCE/RPC
