@@ -1,0 +1,11 @@
+# List nvme devices
+nvme list
+
+# Show sanitize status and estimated secure erase time
+# "No time period reported" can indicate certain action is not supported
+nvme sanitize-log /dev/nvme0
+
+# Sanitize (secure erase) nvme device
+# important for SSD; don't do over USB; maybe overwrite drive manually afterwards
+# actions: 0x02 block erase, 0x03 overwrite, 0x04 crypto erase
+nvme sanitize /dev/nvme0 -a 0x02
