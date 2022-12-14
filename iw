@@ -8,3 +8,6 @@ iw dev wlp2s0 set type monitor
 
 # Switch channel
 iw dev wlp2s0 set channel <num> [width]
+
+# Scan for available networks and show details
+iw dev wlp2s0 scan
