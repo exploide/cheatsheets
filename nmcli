@@ -1,0 +1,2 @@
+# List available wifi networks and their properties
+nmcli -f all device wifi list
