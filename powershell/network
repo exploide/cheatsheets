@@ -12,5 +12,8 @@ syntax: powershell
 Invoke-WebRequest -Uri 192.0.2.1 -Method Post -Body DATA
 echo DATA | Invoke-WebRequest -Uri 192.0.2.1 -Method Post
 
+# Get services listening on TCP ports
+Get-NetTCPConnection -State Listen | Select-Object -Property LocalAddress,LocalPort,OwningProcess,@{'Name'='ProcessName';Expression={(Get-Process -Id $_.OwningProcess).ProcessName}}
+
 # Get proxy settings of current user
 Get-ItemProperty -Path "Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
