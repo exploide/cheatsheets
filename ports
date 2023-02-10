@@ -27,6 +27,7 @@ syntax: plaintext
   445/tcp SMB
   465/tcp SMTPS (client submission)
   500/udp ISAKMP/IKE
+  541/tcp FortiGate to FortiManager Protocol
   546/udp DHCPv6 client
   547/udp DHCPv6 server
   587/tcp SMTP (client submission)
