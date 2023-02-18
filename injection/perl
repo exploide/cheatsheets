@@ -1,0 +1,5 @@
+---
+syntax: perl
+---
+# Execute system command
+system("whoami");
