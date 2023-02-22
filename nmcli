@@ -1,2 +1,5 @@
 # List available wifi networks and their properties
 nmcli -f all device wifi list
+
+# Connect to wifi network
+nmcli -a device wifi connect SSID
