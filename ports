@@ -25,12 +25,15 @@ syntax: plaintext
   389/tcp LDAP
   443/tcp HTTPS
   445/tcp SMB
+  464/tcp Kerberos password change
+  464/udp Kerberos password change
   465/tcp SMTPS (client submission)
   500/udp ISAKMP/IKE
   541/tcp FortiGate to FortiManager Protocol
   546/udp DHCPv6 client
   547/udp DHCPv6 server
   587/tcp SMTP (client submission)
+  593/tcp MS-RPC over HTTP
   623/udp IPMI
   631/tcp CUPS
   636/tcp LDAPS
@@ -41,6 +44,8 @@ syntax: plaintext
  1434/udp MSSQL
  2049/tcp NFS
  2049/udp NFS
+ 3268/tcp LDAP (AD Global Catalog)
+ 3269/tcp LDAPS (AD Global Catalog)
  3306/tcp MySQL
  3389/tcp RDP
  3400/tcp Sophos RED (TLS)
