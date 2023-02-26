@@ -15,6 +15,10 @@ echo DATA | Invoke-WebRequest -Uri 192.0.2.1 -Method Post
 # Get services listening on TCP ports
 Get-NetTCPConnection -State Listen | Select-Object -Property LocalAddress,LocalPort,OwningProcess,@{'Name'='ProcessName';Expression={(Get-Process -Id $_.OwningProcess).ProcessName}}
 
+# Get and set network routes
+Get-NetRoute
+New-NetRoute -DestinationPrefix 10.20.30.0/24 -NextHop 192.0.2.1 -InterfaceIndex 9
+
 # Get proxy settings of current user
 Get-ItemProperty -Path "Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
 
