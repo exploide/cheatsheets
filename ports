@@ -42,6 +42,8 @@ syntax: plaintext
   995/tcp POP3S
  1433/tcp MSSQL
  1434/udp MSSQL
+ 1521/tcp Oracle Net Listener
+ 1556/tcp Veritas NetBackup PBX service
  2049/tcp NFS
  2049/udp NFS
  3268/tcp LDAP (AD Global Catalog)
@@ -49,6 +51,7 @@ syntax: plaintext
  3306/tcp MySQL
  3389/tcp RDP
  3400/tcp Sophos RED (TLS)
+ 3872/tcp Oracle Enterprise Manager Agent
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
  5353/udp mDNS
@@ -65,5 +68,6 @@ syntax: plaintext
  8530/tcp WSUS
  8531/tcp WSUS Metadata
 10250/tcp Kubernetes Kubelet API
+13724/tcp Veritas NetBackup network service
 24007/tcp GlusterFS
 27017/tcp MongoDB
