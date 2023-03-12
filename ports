@@ -32,10 +32,11 @@ syntax: plaintext
   541/tcp FortiGate to FortiManager Protocol
   546/udp DHCPv6 client
   547/udp DHCPv6 server
+  515/tcp LPD/LPR
   587/tcp SMTP (client submission)
   593/tcp MS-RPC over HTTP
   623/udp IPMI
-  631/tcp CUPS
+  631/tcp IPP/IPPS/CUPS
   636/tcp LDAPS
   853/tcp DNS over TLS
   993/tcp IMAPS
