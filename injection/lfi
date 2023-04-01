@@ -1,2 +1,5 @@
-# PHP conversion filter when parameter is given to require, include, ...
+# PHP conversion filters can be utilized when parameter is given to require, include, ...
+## Retrieve file, base64-encoded to avoid interpretation of the content
 php://filter/convert.base64-encode/resource=file.txt
+## RCE by chaining filters to construct PHP payload in-memory
+https://github.com/synacktiv/php_filter_chain_generator
