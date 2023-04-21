@@ -1,12 +1,15 @@
 # Create bridge, connect interface
-ip l add mybr0 type bridge
-ip l set mybr0 up
+ip l add br0 type bridge
+ip l set br0 up
 ip l set enp1s0 up
-ip l set enp1s0 master mybr0
+ip l set enp1s0 master br0
+# enable bridging of traffic from 'IEEE 802.1D MAC Bridge Filtered MAC Group Addresses'
+# this is necessary e.g. for 802.1X EAP
+echo 65528 > /sys/class/net/br0/bridge/group_fwd_mask
 
 # Remove interface from bridge, delete bridge
 ip l set enp1s0 nomaster
-ip l delete mybr0
+ip l delete br0
 
 # Enable VLAN tagging on interface
 ip l add link enp1s0 name enp1s0.100 type vlan id 100
