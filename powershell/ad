@@ -1,0 +1,5 @@
+---
+syntax: powershell
+---
+# Get domain trusts (/v for SIDs)
+nltest /domain_trusts /v
