@@ -63,6 +63,8 @@ syntax: plaintext
  5985/tcp WinRM
  5986/tcp WinRM (TLS)
  6379/tcp Redis
+ 7167/tcp G DATA Security Client
+ 7169/tcp G DATA Security Client
  8080/tcp HTTP (common alternative)
  8086/tcp InfluxDB
  8443/tcp HTTPS (common alternative)
