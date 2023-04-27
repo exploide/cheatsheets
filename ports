@@ -23,6 +23,7 @@ syntax: plaintext
   161/udp SNMP
   323/udp chronyd
   389/tcp LDAP
+  389/udp CLDAP
   443/tcp HTTPS
   445/tcp SMB
   464/tcp Kerberos password change
@@ -45,6 +46,7 @@ syntax: plaintext
  1434/udp MSSQL
  1521/tcp Oracle Net Listener
  1556/tcp Veritas NetBackup PBX service
+ 1900/udp SSDP/UPnP
  2049/tcp NFS
  2049/udp NFS
  3268/tcp LDAP (AD Global Catalog)
@@ -72,5 +74,6 @@ syntax: plaintext
  8531/tcp WSUS Metadata
 10250/tcp Kubernetes Kubelet API
 13724/tcp Veritas NetBackup network service
+16113/tcp Network Mobility Services Protocol
 24007/tcp GlusterFS
 27017/tcp MongoDB
