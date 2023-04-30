@@ -67,6 +67,8 @@ syntax: plaintext
  6379/tcp Redis
  7167/tcp G DATA Security Client
  7169/tcp G DATA Security Client
+ 7474/tcp Neo4j
+ 7687/tcp Bolt/Neo4j
  8080/tcp HTTP (common alternative)
  8086/tcp InfluxDB
  8443/tcp HTTPS (common alternative)
