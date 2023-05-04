@@ -1,0 +1,2 @@
+# Don't store certificate exceptions permanently
+security.certerrors.permanentOverride = false
