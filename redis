@@ -1,0 +1,15 @@
+# List all keys (can be slow)
+KEYS *
+
+# List keys with a cursor (more efficient; first result is next cursor)
+SCAN 0 COUNT 100
+
+# Get type of key
+TYPE key
+
+# Get value of key
+GET key                     # type string
+LRANGE key 0 -1             # type list
+HGETALL key                 # type hash
+SMEMBERS key                # type set
+ZRANGE key 0 -1 WITHSCORES  # type zset
