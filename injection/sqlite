@@ -1,5 +1,12 @@
 ---
 syntax: sql
 ---
+-- Useful queries
+-- * get sqlite version
+select sqlite_version()
+-- * get table names
+select tbl_name from sqlite_master
+
 -- Write into file when stacked queries are permitted
 ...; attach database '/some/file' as mydb; create table mydb.foo (dataz text); insert into mydb.foo (dataz) values ("some content");--
+
