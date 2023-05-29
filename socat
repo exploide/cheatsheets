@@ -1,0 +1,2 @@
+# Forward one port to another port on another host
+socat TCP-LISTEN:80,bind=192.0.2.1,fork,reuseaddr TCP:192.0.2.2:8080
