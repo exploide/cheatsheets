@@ -1,0 +1,12 @@
+---
+syntax: powershell
+---
+# Get PowerShell version
+$PSVersionTable
+
+# Get PS language mode
+$ExecutionContext.SessionState.LanguageMode
+
+# Get console history file path; disable writing history
+(Get-PSReadlineOption).HistorySavePath
+Set-PSReadlineOption -HistorySaveStyle SaveNothing

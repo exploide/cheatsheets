@@ -1,9 +1,6 @@
 ---
 syntax: powershell
 ---
-# Get PS language mode
-$ExecutionContext.SessionState.LanguageMode
-
 # Create credential object for running commands as another user
 $passwd = ConvertTo-SecureString "password123" -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential "user123", $passwd

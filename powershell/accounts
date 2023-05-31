@@ -1,9 +1,6 @@
 ---
 syntax: powershell
 ---
-# Get PowerShell version
-$PSVersionTable
-
 # Get current user name
 [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 
