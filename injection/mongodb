@@ -1,4 +1,4 @@
 # Authentication bypass
-# - might be possible to change body and content-type from form-data to json
+# - it might be possible to change HTTP body and Content-Type from form-data to json
 # - supplying filter values incrementally can be used to find field values
 {"username": {"$gt": ""}, "password": {"$gt": ""}}

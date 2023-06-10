@@ -1,4 +1,4 @@
-# When an integer is expected but input can be controlled
+# Command injection when an integer is expected but input can be controlled
 input='a[$(whoami >&2)]'
 # for example in
 $((input))
