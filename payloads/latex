@@ -1,0 +1,23 @@
+---
+syntax: latex
+---
+% read entire file with a single command
+\input{/etc/passwd}
+\lstinputlisting{/etc/passwd}  % requires \usepackage{listings}
+\verbatiminput{/etc/passwd}    % requires \usepackage{verbatim}
+
+% read entire file in a loop
+\newread\file
+\openin\file=/etc/passwd
+\loop\unless\ifeof\file
+  \read\file to\line
+  \line
+\repeat
+\closein\file
+
+% read a single line from a file (may repeat line 3+4 for more)
+\newread\file
+\openin\file=/etc/passwd
+\read\file to\line
+\line
+\closein\file
