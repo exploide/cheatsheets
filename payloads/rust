@@ -1,0 +1,5 @@
+---
+syntax: rust
+---
+// Execute system command
+std::process::Command::new("prog").args(["arg1", "arg2"]).status().expect("command failed");
