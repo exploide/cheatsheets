@@ -1,6 +1,11 @@
 ---
 syntax: powershell
 ---
+# Start PowerShell with options suitable for payload execution in the background
+# -ExecutionPolicy Bypass -NoProfile -NonInteractive -WindowStyle Hidden
+# -EncodedCommand is base64 of UTF16LE command string
+powershell.exe -EP Bypass -NoP -NonI -W Hidden -Enc dwBoAG8AYQBtAGkA
+
 # Get PowerShell version
 $PSVersionTable
 
