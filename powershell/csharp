@@ -1,0 +1,15 @@
+---
+syntax: powershell
+---
+# Compile a .NET C# class into an exe file
+$code = @"
+using System;
+class Test
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello World");
+    }
+}
+"@
+Add-Type $code -OutputAssembly test.exe
