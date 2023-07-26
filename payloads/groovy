@@ -1,0 +1,5 @@
+---
+syntax: groovy
+---
+// Execute system command
+print "whoami".execute().text;
