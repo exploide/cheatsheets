@@ -1,0 +1,12 @@
+---
+syntax: powershell
+---
+# Get status of Defender
+Get-MpComputerStatus
+
+# Get all preferences of Defender
+Get-MpPreference
+
+# Add or remove path that is excluded from scanning
+Add-MpPreference -ExclusionPath 'C:\Temp'
+Remove-MpPreference -ExclusionPath 'C:\Temp'
