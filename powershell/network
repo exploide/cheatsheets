@@ -12,6 +12,10 @@ New-NetRoute -DestinationPrefix 10.0.0.0/24 -NextHop 192.0.2.1 -InterfaceIndex 9
 Set-DnsClientServerAddress -InterfaceIndex 9 -ServerAddresses ("192.0.2.1")
 Set-DnsClientServerAddress -InterfaceIndex 9 -ResetServerAddresses
 
+# Get and set firewall status
+Get-NetFirewallProfile
+Set-NetFirewallProfile -Profile Domain,Private,Public -Enabled False
+
 # Get configured wifi networks
 # Export all or specified wifi profile; with cleartext key if local admin
 netsh wlan show profiles
