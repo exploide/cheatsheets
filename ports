@@ -55,8 +55,11 @@ syntax: plaintext
  3389/tcp RDP
  3400/tcp Sophos RED (TLS)
  3872/tcp Oracle Enterprise Manager Agent
+ 4190/tcp ManageSieve
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
+ 4559/tcp HylaFAX
+ 5038/tcp Asterisk Manager Interface
  5353/udp mDNS
  5355/tcp LLMNR
  5355/udp LLMNR
