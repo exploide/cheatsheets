@@ -1,0 +1,10 @@
+# Authenticate with credentials and connect to share
+smbclient -U DOMAIN/USER%PASSWORD \\\\HOST\\SHARE
+# Authenticate without password (anonymous / null session) and connect to share
+smbclient -N \\\\HOST\\SHARE
+
+# List shares on host
+smbclient -L HOST
+
+# Recursively download share content
+smbclient -c 'prompt OFF; recurse ON; mget *' \\\\HOST\\SHARE
