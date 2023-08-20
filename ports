@@ -43,9 +43,10 @@ syntax: plaintext
   993/tcp IMAPS
   995/tcp POP3S
  1433/tcp MSSQL
- 1434/udp MSSQL
+ 1434/udp MSSQL Server Browser service
  1521/tcp Oracle Net Listener
  1556/tcp Veritas NetBackup PBX service
+ 1883/tcp MQTT
  1900/udp SSDP/UPnP
  2049/tcp NFS
  2049/udp NFS
