@@ -18,7 +18,8 @@ syntax: plaintext
   123/udp NTP
   110/tcp POP3
   135/tcp MS-DCE/RPC
-  139/tcp NetBIOS/SMB
+  137/udp NetBIOS-NS
+  139/tcp NetBIOS-SSN/SMB
   143/tcp IMAP
   161/udp SNMP
   323/udp chronyd
@@ -61,6 +62,8 @@ syntax: plaintext
  4500/udp ISAKMP/IKE (NAT-T)
  4559/tcp HylaFAX
  5038/tcp Asterisk Manager Interface
+ 5060/tcp SIP
+ 5060/udp SIP
  5353/udp mDNS
  5355/tcp LLMNR
  5355/udp LLMNR
@@ -83,3 +86,6 @@ syntax: plaintext
 16113/tcp Network Mobility Services Protocol
 24007/tcp GlusterFS
 27017/tcp MongoDB
+49000/tcp TR-064
+49443/tcp TR-064 (TLS)
+51820/udp WireGuard
