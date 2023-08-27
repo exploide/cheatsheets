@@ -8,3 +8,10 @@ Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Name -Path C:\ *.tx
 Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Select-String -ErrorAction SilentlyContinue -Pattern foo
 # Print only files with matches
 Get-ChildItem -Recurse -Force -ErrorAction SilentlyContinue -Path C:\ *.txt | Select-String -ErrorAction SilentlyContinue -Pattern foo | Select-Object -Unique Path
+
+# List alternate data streams of file
+Get-Item -Stream * file.txt | Select Stream, Length
+# Get content of alternate data stream
+Get-Content file.txt -Stream Zone.Identifier
+# Remove Mark of the Web (Zone.Identifier alternate data stream)
+Unblock-File file.txt
