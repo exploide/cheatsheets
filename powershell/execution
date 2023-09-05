@@ -8,5 +8,8 @@ $cred = New-Object System.Management.Automation.PSCredential "user123", $passwd
 # Start process as another user
 Start-Process -Credential $cred -WindowStyle Hidden prog.exe -ArgumentList "arg1 arg2"
 
-# Invoke command as another user on another computer
+# Enter an interactive PowerShell session as another user on another computer (via PS remoting)
+Enter-PSSession -Credential $cred -ComputerName SRV123
+
+# Invoke PowerShell commands as another user on another computer (via PS remoting)
 Invoke-Command -Credential $cred -ComputerName SRV123 -ScriptBlock {whoami}
