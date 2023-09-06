@@ -43,6 +43,7 @@ syntax: plaintext
   853/tcp DNS over TLS
   993/tcp IMAPS
   995/tcp POP3S
+ 1080/tcp SOCKS
  1433/tcp MSSQL
  1434/udp MSSQL Server Browser service
  1521/tcp Oracle Net Listener
