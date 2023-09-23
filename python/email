@@ -7,7 +7,7 @@ import smtplib
 import ssl
 
 msg = EmailMessage()
-msg["Date"] = formatdate(localtime=True)
+msg["Date"] = formatdate()
 msg["From"] = "sender@example.org"
 msg["To"] = "recipient@example.org"
 msg["Subject"] = "Sample Mail"
