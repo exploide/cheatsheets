@@ -52,6 +52,7 @@ syntax: plaintext
  1900/udp SSDP/UPnP
  2049/tcp NFS
  2049/udp NFS
+ 3128/tcp HTTP proxy
  3268/tcp LDAP (AD Global Catalog)
  3269/tcp LDAPS (AD Global Catalog)
  3306/tcp MySQL
