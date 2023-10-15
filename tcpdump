@@ -1,2 +1,6 @@
 # Piping tcpdump over SSH into Wireshark
 ssh host "tcpdump -i any -U -w - 'not port 22'" | wireshark -k -i -
+
+# Filter expressions
+## match source or destination address
+host 192.0.2.1
