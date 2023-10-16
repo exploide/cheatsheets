@@ -70,6 +70,7 @@ syntax: plaintext
  5355/tcp LLMNR
  5355/udp LLMNR
  5432/tcp PostgreSQL
+ 5666/tcp Nagios Remote Plugin Executor
  5900/tcp VNC
  5985/tcp WinRM
  5986/tcp WinRM (TLS)
