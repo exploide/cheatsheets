@@ -1,0 +1,5 @@
+---
+syntax: lua
+---
+-- Execute system command
+os.execute("whoami")
