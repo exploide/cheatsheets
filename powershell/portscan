@@ -1,0 +1,15 @@
+---
+syntax: powershell
+---
+# Perform a simple TCP port scan
+foreach($p in 20..1000) {
+    $c = New-Object System.Net.Sockets.TcpClient
+    $a = $c.BeginConnect("192.0.2.1", $p, $null, $null)
+    $r = $a.AsyncWaitHandle.WaitOne(1000)
+    if($r) {
+        Write-Output "$p/tcp open"
+    } else {
+        Write-Output "$p/tcp closed"
+    }
+    $c.Close()
+}
