@@ -1,0 +1,13 @@
+---
+syntax: javascript
+---
+function saveFile(fileName, data) {
+    // save data to file
+    var stream = new ActiveXObject("ADODB.Stream");
+    stream.Open();
+    stream.Type = 1;  // 1: adTypeBinary
+    stream.Write(data);
+    stream.Position = 0;
+    stream.SaveToFile(fileName, 2);  // 2: adSaveCreateOverWrite
+    stream.Close();
+}

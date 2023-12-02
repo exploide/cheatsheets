@@ -1,0 +1,10 @@
+---
+syntax: javascript
+---
+function downloadData(url) {
+    // load data or file from URL, return data
+    var http = new ActiveXObject("MSXML2.XMLHTTP");
+    http.Open("GET", url, false);  // method, url, async
+    http.Send();
+    return http.ResponseBody;
+}

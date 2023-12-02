@@ -1,0 +1,8 @@
+---
+syntax: javascript
+---
+function exec(cmd) {
+    // execute system command
+    var shell = new ActiveXObject("WScript.Shell");
+    shell.Run(cmd, 0);  // 0: hide window
+}
