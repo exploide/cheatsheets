@@ -65,6 +65,7 @@ syntax: plaintext
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
  4559/tcp HylaFAX
+ 5037/tcp Android Debug Bridge
  5038/tcp Asterisk Manager Interface
  5060/tcp SIP
  5060/udp SIP
