@@ -1,3 +1,9 @@
+# List state of devices
+nmcli device
+
+# Set device to be unmanaged by NM
+nmcli device set DEV managed no
+
 # List available wifi networks and their properties
 nmcli -f all device wifi list
 
