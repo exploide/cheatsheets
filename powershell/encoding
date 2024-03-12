@@ -1,0 +1,8 @@
+---
+syntax: powershell
+---
+# Base64-encode file content
+[Convert]::ToBase64String([IO.File]::ReadAllBytes($FileName))
+
+# Base64-decode string to file
+[IO.File]::WriteAllBytes($FileName, [Convert]::FromBase64String($base64string))
