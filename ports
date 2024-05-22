@@ -60,6 +60,7 @@ syntax: plaintext
  3306/tcp MySQL
  3389/tcp RDP
  3400/tcp Sophos RED (TLS)
+ 3702/udp WS-Discovery
  3872/tcp Oracle Enterprise Manager Agent
  4190/tcp ManageSieve
  4460/tcp NTS-KE (NTP)
