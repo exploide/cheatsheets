@@ -94,6 +94,7 @@ syntax: plaintext
 13724/tcp Veritas NetBackup network service
 16113/tcp Network Mobility Services Protocol
 24007/tcp GlusterFS
+25565/tcp Minecraft
 27017/tcp MongoDB
 49000/tcp TR-064
 49443/tcp TR-064 (TLS)
