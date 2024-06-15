@@ -70,6 +70,10 @@ syntax: plaintext
  5038/tcp Asterisk Manager Interface
  5060/tcp SIP
  5060/udp SIP
+ 5222/tcp XMPP client-to-server
+ 5223/tcp XMPP client-to-server (TLS)
+ 5269/tcp XMPP server-to-server
+ 5270/tcp XMPP server-to-server (TLS)
  5353/udp mDNS
  5355/tcp LLMNR
  5355/udp LLMNR
