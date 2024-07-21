@@ -20,6 +20,7 @@ syntax: plaintext
   110/tcp POP3
   135/tcp MS-DCE/RPC
   137/udp NetBIOS-NS
+  138/udp NetBIOS-DGM
   139/tcp NetBIOS-SSN/SMB
   143/tcp IMAP
   161/udp SNMP
@@ -32,6 +33,9 @@ syntax: plaintext
   464/udp Kerberos password change
   465/tcp SMTPS (client submission)
   500/udp ISAKMP/IKE
+  512/tcp rexec
+  513/tcp rlogin
+  514/tcp rsh
   541/tcp FortiGate to FortiManager Protocol
   546/udp DHCPv6 client
   547/udp DHCPv6 server
@@ -45,6 +49,7 @@ syntax: plaintext
   993/tcp IMAPS
   995/tcp POP3S
  1080/tcp SOCKS
+ 1099/tcp Java RMI
  1433/tcp MSSQL
  1434/udp MSSQL Server Browser service
  1521/tcp Oracle Net Listener
@@ -60,6 +65,7 @@ syntax: plaintext
  3306/tcp MySQL
  3389/tcp RDP
  3400/tcp Sophos RED (TLS)
+ 3632/tcp distcc
  3702/udp WS-Discovery
  3872/tcp Oracle Enterprise Manager Agent
  4190/tcp ManageSieve
@@ -83,10 +89,12 @@ syntax: plaintext
  5985/tcp WinRM
  5986/tcp WinRM (TLS)
  6379/tcp Redis
+ 6667/tcp IRC
  7167/tcp G DATA Security Client
  7169/tcp G DATA Security Client
  7474/tcp Neo4j
  7687/tcp Bolt/Neo4j
+ 8009/tcp Apache JServ Protocol
  8080/tcp HTTP (common alternative)
  8086/tcp InfluxDB
  8140/tcp Puppet Master
