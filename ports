@@ -74,6 +74,7 @@ syntax: plaintext
  4559/tcp HylaFAX
  5037/tcp Android Debug Bridge
  5038/tcp Asterisk Manager Interface
+ 5040/tcp Windows Deployment Services (RPC)
  5060/tcp SIP
  5060/udp SIP
  5222/tcp XMPP client-to-server
@@ -93,6 +94,7 @@ syntax: plaintext
  7167/tcp G DATA Security Client
  7169/tcp G DATA Security Client
  7474/tcp Neo4j
+ 7680/tcp Windows Update Delivery Optimization
  7687/tcp Bolt/Neo4j
  8009/tcp Apache JServ Protocol
  8080/tcp HTTP (common alternative)
