@@ -1,0 +1,5 @@
+# generate minimal wpa_supplicant config for SSID, prompts for password
+wpa_passphrase SSID > wpa_supplicant.conf
+
+# connect to SSID specified in config file via given interface (add -B for background)
+wpa_supplicant -i wlp2s0 -c wpa_supplicant.conf
