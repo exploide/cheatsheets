@@ -25,6 +25,7 @@ syntax: plaintext
   143/tcp IMAP
   161/udp SNMP
   323/udp chronyd
+  383/tcp HP Performance Agent
   389/tcp LDAP
   389/udp CLDAP
   443/tcp HTTPS
