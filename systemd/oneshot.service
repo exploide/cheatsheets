@@ -1,0 +1,16 @@
+---
+syntax: ini
+---
+# A oneshot service which executes a command that terminates quickly
+# this can be installed in /etc/systemd/system
+[Unit]
+Description=Example oneshot service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/foo --do-something
+ExecStop=/usr/local/bin/foo --cleanup
+
+[Install]
+WantedBy=multi-user.target
