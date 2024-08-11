@@ -11,14 +11,16 @@ echo 65528 > /sys/class/net/br0/bridge/group_fwd_mask
 ip l set enp1s0 nomaster
 ip l delete br0
 
-# Enable VLAN tagging on interface
+
+# Create VLAN-tagged interface
 ip l add link enp1s0 name enp1s0.100 type vlan id 100
 ip l set dev enp1s0.100 up
 dhcpcd enp1s0.100   # or add IP manually before setting device up
 
-# Remove VLAN-enabled interface
+# Remove VLAN-tagged interface
 ip l set dev enp1s0.100 down
 ip l delete enp1s0.100
+
 
 # Create and use network namespace
 ip netns add mynetns
