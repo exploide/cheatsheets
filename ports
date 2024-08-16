@@ -6,6 +6,7 @@ syntax: plaintext
    22/tcp SSH
    23/tcp Telnet
    25/tcp SMTP
+   43/tcp WHOIS
    53/tcp DNS
    53/udp DNS
    67/udp DHCPv4 server
