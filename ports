@@ -25,6 +25,7 @@ syntax: plaintext
   139/tcp NetBIOS-SSN/SMB
   143/tcp IMAP
   161/udp SNMP
+  162/udp SNMP (Trap)
   323/udp chronyd
   383/tcp HP Performance Agent
   389/tcp LDAP
