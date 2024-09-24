@@ -80,6 +80,7 @@ syntax: plaintext
  5040/tcp Windows Deployment Services (RPC)
  5060/tcp SIP
  5060/udp SIP
+ 5172/tcp PCoIP Management Protocol
  5222/tcp XMPP client-to-server
  5223/tcp XMPP client-to-server (TLS)
  5269/tcp XMPP server-to-server
