@@ -30,6 +30,7 @@ syntax: plaintext
   383/tcp HP Performance Agent
   389/tcp LDAP
   389/udp CLDAP
+  427/tcp CIM SLP
   443/tcp HTTPS
   445/tcp SMB
   464/tcp Kerberos password change
@@ -71,6 +72,8 @@ syntax: plaintext
  3632/tcp distcc
  3702/udp WS-Discovery
  3872/tcp Oracle Enterprise Manager Agent
+ 3910/tcp HP Web Jetadmin (print requests)
+ 3911/tcp HP Web Jetadmin (printer status)
  4190/tcp ManageSieve
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
@@ -88,11 +91,13 @@ syntax: plaintext
  5353/udp mDNS
  5355/tcp LLMNR
  5355/udp LLMNR
+ 5357/tcp Web Service on Devices API
  5432/tcp PostgreSQL
  5666/tcp Nagios Remote Plugin Executor
  5900/tcp VNC
  5985/tcp WinRM
  5986/tcp WinRM (TLS)
+ 5989/tcp WBEM/CIM (TLS)
  6379/tcp Redis
  6667/tcp IRC
  7167/tcp G DATA Security Client
