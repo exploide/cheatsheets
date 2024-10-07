@@ -58,6 +58,7 @@ syntax: plaintext
  1434/udp MSSQL Server Browser service
  1521/tcp Oracle Net Listener
  1556/tcp Veritas NetBackup PBX service
+ 1720/tcp H.323
  1801/tcp Microsoft Message Queuing
  1883/tcp MQTT
  1900/udp SSDP/UPnP
