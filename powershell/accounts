@@ -5,4 +5,4 @@ syntax: powershell
 [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 
 # Get max number of Domain Cached Credentials
-reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v CachedLogonsCount
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name CachedLogonsCount

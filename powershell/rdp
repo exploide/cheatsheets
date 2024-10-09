@@ -2,7 +2,7 @@
 syntax: powershell
 ---
 # Enable RDP (set value to 1 for disable)
-Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server" -Name "fDenyTSConnections" -Value 0
+Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server" -Name fDenyTSConnections -Value 0
 
 # Enable, disable, or get status of RestrictedAdmin mode, which supports RDP authentication via pass-the-hash
 New-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name DisableRestrictedAdmin -Value 0
