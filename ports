@@ -26,6 +26,7 @@ syntax: plaintext
   143/tcp IMAP
   161/udp SNMP
   162/udp SNMP (Trap)
+  179/tcp BGP
   323/udp chronyd
   383/tcp HP Performance Agent
   389/tcp LDAP
@@ -50,6 +51,7 @@ syntax: plaintext
   631/tcp IPP/IPPS/CUPS
   636/tcp LDAPS
   853/tcp DNS over TLS
+  990/tcp FTP (TLS)
   993/tcp IMAPS
   995/tcp POP3S
  1080/tcp SOCKS
@@ -64,6 +66,7 @@ syntax: plaintext
  1900/udp SSDP/UPnP
  2049/tcp NFS
  2049/udp NFS
+ 2404/tcp IEC-104
  3128/tcp HTTP proxy
  3268/tcp LDAP (AD Global Catalog)
  3269/tcp LDAPS (AD Global Catalog)
