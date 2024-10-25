@@ -82,6 +82,7 @@ syntax: plaintext
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
  4559/tcp HylaFAX
+ 4840/tcp OPC UA
  5037/tcp Android Debug Bridge
  5038/tcp Asterisk Manager Interface
  5040/tcp Windows Deployment Services (RPC)
