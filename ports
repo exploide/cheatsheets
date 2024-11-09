@@ -15,6 +15,7 @@ syntax: plaintext
    80/tcp HTTP
    88/tcp Kerberos
    88/udp Kerberos
+  102/tcp ISO Transport Service
   111/tcp rpcbind
   111/udp rpcbind
   123/udp NTP
@@ -38,6 +39,7 @@ syntax: plaintext
   464/udp Kerberos password change
   465/tcp SMTPS (client submission)
   500/udp ISAKMP/IKE
+  502/tcp Modbus TCP
   512/tcp rexec
   513/tcp rlogin
   514/tcp rsh
@@ -68,6 +70,7 @@ syntax: plaintext
  2049/udp NFS
  2404/tcp IEC-104
  3128/tcp HTTP proxy
+ 3260/tcp iSCSI
  3268/tcp LDAP (AD Global Catalog)
  3269/tcp LDAPS (AD Global Catalog)
  3306/tcp MySQL
