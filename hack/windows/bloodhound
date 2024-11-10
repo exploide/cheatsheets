@@ -1,0 +1,25 @@
+---
+syntax: markdown
+---
+# BloodHound
+
+Collect data about Active Directory privileges for visualization with BloodHound.
+
+Tools:
+- https://github.com/SpecterOps/BloodHound
+- https://github.com/BloodHoundAD/SharpHound
+
+## SharpHound collector on domain-joined machine
+
+SharpHound.exe -c All GPOLocalGroup --outputdirectory $pwd
+
+## SharpHound collector on non-domain-joined machine
+
+- get current DNS settings and set DNS server to IP address of DC
+    Get-DnsClientServerAddress
+    Set-DnsClientServerAddress -InterfaceIndex 9 -ServerAddresses ("192.0.2.1")
+
+- create new PowerShell process with netonly credentials of AD user (prompts for password)
+    runas /netonly /user:FQDN\USER powershell.exe
+
+- run SharpHound as usual
