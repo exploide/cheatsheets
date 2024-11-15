@@ -1,7 +1,6 @@
 ---
 syntax: plaintext
 ---
-# Common services on ports
    21/tcp FTP
    22/tcp SSH
    23/tcp Telnet
