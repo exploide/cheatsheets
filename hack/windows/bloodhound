@@ -7,7 +7,7 @@ Collect data about Active Directory privileges for visualization with BloodHound
 
 Tools:
 - https://github.com/SpecterOps/BloodHound
-- https://github.com/BloodHoundAD/SharpHound
+- https://github.com/SpecterOps/SharpHound
 
 ## SharpHound collector on domain-joined machine
 
