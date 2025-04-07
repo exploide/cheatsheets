@@ -68,6 +68,7 @@ syntax: plaintext
  2049/tcp NFS
  2049/udp NFS
  2404/tcp IEC-104
+ 2701/tcp Microsoft Configuration Manager Remote Control
  3128/tcp HTTP proxy
  3260/tcp iSCSI
  3268/tcp LDAP (AD Global Catalog)
