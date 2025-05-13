@@ -85,6 +85,7 @@ syntax: plaintext
  4460/tcp NTS-KE (NTP)
  4500/udp ISAKMP/IKE (NAT-T)
  4559/tcp HylaFAX
+ 4786/tcp Cisco Smart Install
  4840/tcp OPC UA
  5037/tcp Android Debug Bridge
  5038/tcp Asterisk Manager Interface
@@ -107,6 +108,7 @@ syntax: plaintext
  5985/tcp WinRM
  5986/tcp WinRM (TLS)
  5989/tcp WBEM/CIM (TLS)
+ 6129/tcp Dameware Mini Remote Control
  6379/tcp Redis
  6667/tcp IRC
  7167/tcp G DATA Security Client
