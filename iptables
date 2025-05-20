@@ -5,4 +5,4 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 sysctl -w net.ipv4.ip_forward=1
 
 # When routing, redirect certain traffic to another destination
-iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.0.2.1:8080
+iptables -t nat -A PREROUTING -p tcp --dst 192.0.2.1 --dport 80 -j DNAT --to-destination 192.0.2.2:8080
