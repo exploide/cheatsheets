@@ -17,6 +17,15 @@ Get-NetFirewallProfile
 Set-NetFirewallProfile -Profile Domain,Private,Public -Enabled False
 
 # Get configured wifi networks
-# Export all or specified wifi profile; with cleartext key if local admin
 netsh wlan show profiles
+# Export all or specified wifi profile; with cleartext key if local admin
 netsh wlan export profile key=clear [ProfileName]
+
+# Disable services listening on 445/tcp
+# beware of firewall when binding something else to that port
+sc.exe config LanmanServer start= disabled
+sc.exe stop LanmanServer
+sc.exe stop srv2
+sc.exe stop srvnet
+# Enable and start services again
+sc.exe config LanmanServer start= auto
