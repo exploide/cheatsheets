@@ -14,7 +14,7 @@ syntax: plaintext
    80/tcp HTTP
    88/tcp Kerberos
    88/udp Kerberos
-  102/tcp ISO Transport Service
+  102/tcp ISO Transport Service / S7comm
   111/tcp rpcbind
   111/udp rpcbind
   123/udp NTP
