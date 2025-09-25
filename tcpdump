@@ -2,5 +2,8 @@
 ssh host "tcpdump -i any -U -w - 'not port 22'" | wireshark -k -i -
 
 # Filter expressions
-## match source or destination address
+## source or destination address
 host 192.0.2.1
+## source or destination port
+tcp port 443
+udp port 53
