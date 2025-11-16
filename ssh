@@ -1,0 +1,12 @@
+# Local TCP port forwarding
+# listens on BINDADDR:BINDPORT on the client and forwards to TARGETADDR:TARGETPORT via the host
+ssh user@host -NL BINDADDR:BINDPORT:TARGETADDR:TARGETPORT
+
+# Remote TCP port forwarding
+# listens on BINDADDR:BINDPORT on the host and forwards to TARGETADDR:TARGETPORT via the client
+ssh user@host -NR BINDADDR:BINDPORT:TARGETADDR:TARGETPORT
+
+# Establish SSH connection via a web proxy using a suitable ProxyCommand
+# using a typical web port for the SSH service increases the chance of getting through
+ssh user@host -p 8080 -o "ProxyCommand=ncat --proxy proxy.example.com:8080 %h %p"
+ssh user@host -p 8080 -o "ProxyCommand=proxytunnel -p proxy.example.com:8080 -d %h:%p"
