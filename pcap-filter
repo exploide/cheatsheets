@@ -1,0 +1,12 @@
+# source or destination address
+host 192.0.2.1
+
+# source or destination port
+tcp port 443
+udp port 53
+
+# logical operators
+not arp
+ip6 and udp
+tcp or udp
+arp or (ip and tcp)

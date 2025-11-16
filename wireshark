@@ -1,0 +1,3 @@
+# Piping remote capture tools over SSH into Wireshark
+ssh HOST "tcpdump -i any -U -w - 'not tcp port 22'" | wireshark -k -i -
+ssh HOST "dumpcap -i any -w - -f 'not tcp port 22'" | wireshark -k -i -
