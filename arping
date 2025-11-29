@@ -1,0 +1,2 @@
+# Duplicate address detection, check if an IP address is taken
+arping -D -f -c 3 -I enp1s0 192.0.2.1
