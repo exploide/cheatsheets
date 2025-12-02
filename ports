@@ -105,6 +105,7 @@ syntax: plaintext
  5357/tcp Web Service on Devices API
  5432/tcp PostgreSQL
  5666/tcp Nagios Remote Plugin Executor
+ 5800/tcp VNC (HTTP)
  5900/tcp VNC
  5938/tcp TeamViewer
  5985/tcp WinRM
@@ -126,6 +127,9 @@ syntax: plaintext
  8530/tcp WSUS
  8531/tcp WSUS Metadata
  9100/tcp JetDirect/RAW
+ 9593/tcp Ivanti Endpoint Manager
+ 9594/tcp Ivanti Endpoint Manager
+ 9595/tcp Ivanti Endpoint Manager
 10250/tcp Kubernetes Kubelet API
 13724/tcp Veritas NetBackup network service
 16113/tcp Network Mobility Services Protocol
