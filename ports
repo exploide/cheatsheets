@@ -136,6 +136,7 @@ syntax: plaintext
 24007/tcp GlusterFS
 25565/tcp Minecraft
 27017/tcp MongoDB
+47808/udp BACnet
 49000/tcp TR-064
 49443/tcp TR-064 (TLS)
 51820/udp WireGuard
