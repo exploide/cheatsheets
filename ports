@@ -57,6 +57,7 @@ syntax: plaintext
   995/tcp POP3S
  1080/tcp SOCKS
  1099/tcp Java RMI
+ 1217/tcp CODESYS Gateway V3
  1433/tcp MSSQL
  1434/udp MSSQL Server Browser service
  1521/tcp Oracle Net Listener
@@ -108,11 +109,13 @@ syntax: plaintext
  5800/tcp VNC (HTTP)
  5900/tcp VNC
  5938/tcp TeamViewer
+ 5984/tcp CouchDB
  5985/tcp WinRM
  5986/tcp WinRM (TLS)
  5989/tcp WBEM/CIM (TLS)
  6129/tcp Dameware Mini Remote Control
  6379/tcp Redis
+ 6556/tcp Checkmk
  6667/tcp IRC
  7167/tcp G DATA Security Client
  7169/tcp G DATA Security Client
@@ -127,6 +130,8 @@ syntax: plaintext
  8530/tcp WSUS
  8531/tcp WSUS Metadata
  9100/tcp JetDirect/RAW
+ 9200/tcp Elasticsearch
+ 9300/tcp Elasticsearch (cluster nodes)
  9593/tcp Ivanti Endpoint Manager
  9594/tcp Ivanti Endpoint Manager
  9595/tcp Ivanti Endpoint Manager
