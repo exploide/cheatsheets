@@ -138,6 +138,7 @@ syntax: plaintext
 10250/tcp Kubernetes Kubelet API
 13724/tcp Veritas NetBackup network service
 16113/tcp Network Mobility Services Protocol
+17533/tcp BlackBerry server
 24007/tcp GlusterFS
 25565/tcp Minecraft
 27017/tcp MongoDB
