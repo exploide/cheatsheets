@@ -1,6 +1,10 @@
 ---
 syntax: plaintext
 ---
+    7/tcp Echo
+    7/udp Echo
+   17/tcp Quote of the Day
+   17/udp Quote of the Day
    21/tcp FTP
    22/tcp SSH
    23/tcp Telnet
@@ -51,6 +55,7 @@ syntax: plaintext
   623/udp IPMI
   631/tcp IPP/IPPS/CUPS
   636/tcp LDAPS
+  830/tcp NETCONF over SSH
   853/tcp DNS over TLS
   990/tcp FTP (TLS)
   993/tcp IMAPS
