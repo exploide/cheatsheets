@@ -31,6 +31,7 @@ syntax: plaintext
   161/udp SNMP
   162/udp SNMP (Trap)
   179/tcp BGP
+  264/tcp Check Point FireWall-1 Topology
   323/udp chronyd
   383/tcp HP Performance Agent
   389/tcp LDAP
