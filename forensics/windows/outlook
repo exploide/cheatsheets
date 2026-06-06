@@ -1,0 +1,18 @@
+---
+syntax: markdown
+---
+# Outlook
+
+Outlook stores data (mails, calendar, contacts) locally in a `.pst` or `.ost` data file.
+Such files can be found in `C:\Users\username\AppData\Local\Microsoft\Outlook\`.
+
+
+## Extract Outlook data via readpst on Linux
+
+The tool `readpst` (https://github.com/pst-format/libpst) can be used to convert an Outlook data file to mbox files
+or to extract individual emails and other files.
+
+Process an Outlook data file and recursively create single email files in an output directory:
+    readpst user@example.com.ost -r -S -o output/
+
+Other output formats are supported.
