@@ -1,0 +1,19 @@
+---
+syntax: markdown
+---
+# Windows Explorer thumbnails
+
+Windows Explorer stores thumbnails in the thumbcache.
+Such thumbnails can exist even when the original file has been deleted.
+
+Thumbcache files are located in `C:\Users\username\AppData\Local\Microsoft\Windows\Explorer\`.
+
+
+## Extract thumbnails via vinetto on Linux
+
+The tool `vinetto` (https://github.com/AtesComp/Vinetto) can be used to extract thumbnails from thumbcache files.
+
+Process a thumbcache file, extract thumbnails to an output folder and create an HTML report:
+    vinetto thumbcache_256.db -o output/ -H
+
+Instead of individual thumbcache files, it can also process directory structures.
