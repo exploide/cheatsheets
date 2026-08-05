@@ -7,3 +7,6 @@ ldapsearch -H ldaps://SERVER:636 -x -s base namingcontexts
 
 # dump everything from specified naming context
 ldapsearch -o ldif_wrap=no -H ldaps://SERVER:636 -x -D 'uid=USER,o=ORG,dc=CORP,dc=COM' -W -b 'dc=CORP,dc=COM'
+
+# perform a filtered search against an Active Directory LDAP and return selected attributes
+ldapsearch -o ldif_wrap=no -H ldaps://SERVER:636 -x -D 'USER@CORP.COM' -W -b 'DC=CORP,DC=COM' '(&(objectClass=computer)(sAMAccountName=DE-*))' dNSHostName description
