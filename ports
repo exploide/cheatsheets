@@ -51,6 +51,7 @@ syntax: plaintext
   541/tcp FortiGate to FortiManager Protocol
   546/udp DHCPv6 client
   547/udp DHCPv6 server
+  554/tcp RTSP
   587/tcp SMTP (client submission)
   593/tcp MS-RPC over HTTP
   623/udp IPMI
