@@ -38,6 +38,7 @@ syntax: plaintext
   389/udp CLDAP
   427/tcp CIM SLP
   443/tcp HTTPS
+  443/udp HTTP/3 (QUIC)
   445/tcp SMB
   464/tcp Kerberos password change
   464/udp Kerberos password change
